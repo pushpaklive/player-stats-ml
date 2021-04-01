@@ -1,0 +1,42 @@
+<div class="add-player-container">
+  <div>
+    <div>
+      <mat-chip color="accent" selected>Name</mat-chip>
+    </div>
+    <input matInput [(ngModel)]="playerName" />
+  </div>
+  <div>
+    <div>
+      <mat-chip color="accent" selected>Stamina</mat-chip>
+    </div>
+    <input matInput [(ngModel)]="playerStamina" />
+  </div>
+  <div>
+    <div>
+      <mat-chip color="accent" selected>Speed</mat-chip>
+    </div>
+    <input matInput [(ngModel)]="playerSpeed" />
+  </div>
+  <div>
+    <div>
+      <mat-chip color="accent" selected>Dribble</mat-chip>
+    </div>
+    <input matInput [(ngModel)]="playerDribble" />
+  </div>
+  <div>
+    <div>
+      <mat-chip color="accent" selected>Accuracy</mat-chip>
+    </div>
+    <input matInput [(ngModel)]="playerAccuracy" />
+  </div>
+  <div>
+    <div>
+      <mat-chip color="accent" selected>Power</mat-chip>
+    </div>
+    <input matInput [(ngModel)]="playerPower" />
+  </div>
+</div>
+
+<div>
+  <button mat-fab (click)="addPlayer()"><mat-icon>add</mat-icon></button>
+</div>
