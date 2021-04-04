@@ -1,0 +1,61 @@
+<h1>All Players</h1>
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Pushpak" #input />
+</mat-form-field>
+
+<button mat-button (click)="deleteAllPlayers()">Delete All Players</button>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let player">
+        <input matInput [value]="player.name">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="stamina">
+    <th mat-header-cell *matHeaderCellDef>Stamina</th>
+    <td mat-cell *matCellDef="let player"><input matInput [value]="player.stamina"></td>
+  </ng-container>
+
+  <ng-container matColumnDef="speed">
+    <th mat-header-cell *matHeaderCellDef>Speed</th>
+    <td mat-cell *matCellDef="let player">
+        <input matInput [value]="player.skills.speed">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dribble">
+    <th mat-header-cell *matHeaderCellDef>Dribble</th>
+    <td mat-cell *matCellDef="let player">
+        <input matInput [value]="player.skills.dribble">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="accuracy">
+    <th mat-header-cell *matHeaderCellDef>Accuracy</th>
+    <td mat-cell *matCellDef="let player">
+        <input matInput [value]="player.skills.accuracy">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="power">
+    <th mat-header-cell *matHeaderCellDef>Power</th>
+    <td mat-cell *matCellDef="let player">
+        <input matInput [value]="player.skills.power">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let player">
+        <button matButton (click)="removePlayer(player)"> x </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+</table>
