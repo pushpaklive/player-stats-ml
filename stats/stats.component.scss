@@ -1,0 +1,9 @@
+.bubble-charts-container {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.bubble-charts-container > div {
+    padding: 10px;
+    box-shadow: 1px 1px 3px lightgray;
+}
